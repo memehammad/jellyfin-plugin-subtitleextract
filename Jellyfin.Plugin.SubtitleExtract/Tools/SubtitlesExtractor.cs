@@ -48,7 +48,8 @@ namespace Jellyfin.Plugin.SubtitleExtract.Tools
                 var streams = video.GetMediaStreams()
                     .Where(stream => stream.IsTextSubtitleStream
                                      && stream.SupportsExternalStream
-                                     && !stream.IsExternal);
+                                     && !stream.IsExternal
+                                     && stream.Language == "eng");
                 foreach (var stream in streams)
                 {
                     var index = stream.Index;
