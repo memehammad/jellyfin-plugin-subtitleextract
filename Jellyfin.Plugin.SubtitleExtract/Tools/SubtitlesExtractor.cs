@@ -49,7 +49,7 @@ namespace Jellyfin.Plugin.SubtitleExtract.Tools
                     .Where(stream => stream.IsTextSubtitleStream
                                      && stream.SupportsExternalStream
                                      && !stream.IsExternal
-                                     && stream.Language == "eng");
+                                     && (stream.Language == "eng" || stream.Language == "ger" || stream.Language == "jpn" || stream.Language == "swe"));
                 foreach (var stream in streams)
                 {
                     var index = stream.Index;
